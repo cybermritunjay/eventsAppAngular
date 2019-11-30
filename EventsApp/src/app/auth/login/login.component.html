@@ -1,0 +1,28 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">                        
+              <h2>Login</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-md-3">
+                <form id="login-form" class="form" action="#" method="POST" role="form"  #loginForm="ngForm">
+                    <small class="text-danger">{{formError}}</small>
+                    <div class="form-group">
+                        <label class="form-label" for="login-email">Your Email</label>
+                        <input type="text" #email="ngModel" required class="form-control" [class.is-invalid]="email.invalid && email.touched" id="login-email" name="login-email" placeholder="Your Email" tabindex="1" [(ngModel)]="loginUserData.email" >
+                        <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>
+                    </div>                            
+                    <div class="form-group">
+                        <label class="form-label" for="login-email">Your Password</label>
+                        <input type="password" #password="ngModel" required class="form-control" [class.is-invalid]="password.invalid && password.touched" id="login-password" [(ngModel)]="loginUserData.password" name="login-password" placeholder="Your Password" tabindex="2">
+                        <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small>
+                    </div>                            
+                   
+                    <div class="text-center">
+                        <button type="submit" (click)="loginUser(loginForm)" class="btn btn-start-order">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>

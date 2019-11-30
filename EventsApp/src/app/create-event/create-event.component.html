@@ -1,0 +1,37 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">                        
+              <h2>Create Event</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 offset-md-1">
+                <form id="event-form" class="form" action="#" method="POST" role="form" #eventForm="ngForm">
+                    <small class="text-danger">{{formError}}</small>
+                    <div class="form-group">
+                        <label class="form-label" for="event-name">Event Name</label>
+                        <input #eventName="ngModel" required class="form-control" [class.is-invalid]="eventName.invalid && eventName.touched" type="text" [(ngModel)]="createEvent.name" class="form-control" id="event-name" name="event-name" placeholder="Event Name" tabindex="1">
+                        <small class="text-danger" [class.d-none]="eventName.valid || eventName.untouched">Event Name is required</small>
+                    </div>                            
+                    <div class="form-group">
+                        <label class="form-label" for="event-date">Event Date</label>
+                        <input #eventDate="ngModel" required class="form-control" [class.is-invalid]="eventDate.invalid && eventDate.touched" type="event-date" [(ngModel)]="createEvent.date" class="form-control" id="event-date" name="event-date" placeholder="Event Date" tabindex="2">
+                        <small class="text-danger" [class.d-none]="eventDate.valid || eventDate.untouched">Event Date is required</small>
+                    </div>                            
+                    <div class="form-group">
+                        <label class="form-label" for="event-place">Event Place</label>
+                        <input #eventPlace="ngModel" required class="form-control" [class.is-invalid]="eventPlace.invalid && eventPlace.touched" type="text" class="form-control" [(ngModel)]="createEvent.place" id="event-place" name="event-place" placeholder="Event Place" tabindex="3">
+                        <small class="text-danger" [class.d-none]="eventPlace.valid || eventPlace.untouched">Event Place is required</small>
+                    </div>                            
+                    <div class="form-group">
+                        <label class="form-label" for="event-description">Description</label>
+                        <textarea #eventDescription="ngModel" required class="form-control" [class.is-invalid]="eventDescription.invalid && eventDescription.touched" rows="5" cols="50" [(ngModel)]="createEvent.Description" name="event-description" class="form-control" id="event-description" placeholder="Event Description" tabindex="4"></textarea>                                 
+                        <small class="text-danger" [class.d-none]="eventDescription.valid || eventDescription.untouched">Event Description is required</small>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" (click)="createNewEvent(eventForm)" class="btn btn-start-order">Create Event</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>

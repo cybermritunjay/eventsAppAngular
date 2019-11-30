@@ -1,0 +1,43 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">                        
+              <h2>Sign Up</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-md-3">
+                <form id="signup-form" class="form" action="#" method="POST" role="form"  #signupForm="ngForm">
+                        <small class="text-danger">{{formError}}</small>
+                    <div class="form-group">
+                        <label class="form-label" for="signup-name">Your Name</label>
+                        <input type="text" #name="ngModel" required class="form-control" [class.is-invalid]="name.invalid && name.touched" name="signup-name" [(ngModel)]="regiserUserData.name" placeholder="Your Name" tabindex="1">
+                        <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
+                    </div>                            
+                    <div class="form-group">
+                        <label class="form-label" for="signup-email">Your Email</label>
+                        <input type="email" #email="ngModel" required class="form-control" [class.is-invalid]="email.invalid && email.touched" [(ngModel)]="regiserUserData.email" id="signup-email" name="signup-email" placeholder="Your Email" tabindex="2">
+                        <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>
+                    </div>                            
+                    <div class="form-group">
+                            <label class="form-label" for="signup-email">Your Password</label>
+                            <input type="password"[(ngModel)]="regiserUserData.password" #password="ngModel" required class="form-control" [class.is-invalid]="password.invalid && password.touched" id="signup-password" name="signup-password" placeholder="Your Password" tabindex="3">
+                            <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small>
+                        </div>                            
+                    <div class="form-group">
+                            <label class="form-label" for="signup-email">Confirm Password</label>
+                            <input type="password"[(ngModel)]="regiserUserData.cnfPassword" #cnfPassword="ngModel" required class="form-control" [class.is-invalid]="cnfPassword.invalid && cnfPassword.touched " id="signup-cnf-password" name="signup-cnf-password" placeholder="Confirm Password" tabindex="4">
+                            <small class="text-danger" [class.d-none]="cnfPassword.valid || cnfPassword.untouched">Confirm Password is required</small>
+                            <br>
+                            <small class="text-danger" *ngIf="cnfPassword.value != password.value">Password and confirm Password do Not Match</small>
+
+                    </div>
+                    <div class="text-center">
+                        <button [disabled]="!signupForm.valid" type="submit" (click)="signupSubmit(signupForm)"  class="btn btn-start-order">Sign Up</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+      </div>
+
+      <!------ (click)="registerUser()"-->

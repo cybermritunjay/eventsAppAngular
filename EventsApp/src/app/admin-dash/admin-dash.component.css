@@ -1,0 +1,7 @@
+#create-event-button{
+    float: right;
+    margin: 15px 0px 25px 0;
+}
+.delete-event{
+    cursor:pointer;
+}

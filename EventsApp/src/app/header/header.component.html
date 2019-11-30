@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">EventApp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+          aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a *ngIf= "! _authService.loggedIn()" routerLink="/login" class="nav-link" href="#"> Login
+              </a>
+            </li>
+            <li class="nav-item">
+              <a *ngIf= "! _authService.loggedIn()" routerLink="/signup" class="nav-link" href="#"> Signup</a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf= " _authService.loggedIn()" routerLink="/admin-dash" class="nav-link" href="#"> Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf= " _authService.loggedIn()" (click)="_authService.logout()" class="nav-link" href="#"> Logout</a>
+            </li>
+          </ul>
+        </div>
+</nav>

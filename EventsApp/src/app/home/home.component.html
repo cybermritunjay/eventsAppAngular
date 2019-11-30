@@ -1,0 +1,16 @@
+
+<div class="main container-fluid">
+    <div class="row">
+              <div class="col-4" *ngFor="let event of Events">
+                  <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">{{event.name}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{event.date}}</h6>
+                        <p class="card-text">{{event.Description}}</p>
+                        <p class="cardp" href="#">{{event.place}}</p>
+                        <p class="cardp p2" href="#">{{event.creator}}</p>
+                      </div>
+                    </div>
+              </div>
+              </div>
+      </div>
